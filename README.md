@@ -1,35 +1,10 @@
-## deql-ms
+## deql-ms-system
 
-The template-service (ms) includes a set for the [server](https://github.com/IAlexandr/deql-ms-server) and [client](https://github.com/IAlexandr/deql-ms-client).
+* initializing db schema.
+* db seed.
+* tools for changing existing db schema.
 
-You can use both the server and client parts separately.
-
-The ms are tools:
-
-### v.1
-
-* [x] Apollo Server
-* [x] Apollo Engine
-* [x] Graphql Playground
-* [x] Graphql Voyager
-* [x] Express-session (sequelize)
-* [ ] Schema stitching
-* [ ] Apollo Client
-
-### v.2
-
-* [ ] Express-session (connect-redis)
-* [ ] Prisma GraphQL API (Database Connector: Postgres)
-
-You can add other tools to repository [deql-ms-server](https://github.com/IAlexandr/deql-ms-server)
-
-* [x] VSCode server debugging (launch.json)
-
-### Initializing submodules:
-
-* `git submodule init; git submodule update`
-
-For one submodule (client/server):
+App based on the template-service (ms) includes a set for the [server](https://github.com/IAlexandr/deql-ms-server) and [client](https://github.com/IAlexandr/deql-ms-client).
 
 * `git submodule init server/deql-ms-server`
 
@@ -39,15 +14,10 @@ For one submodule (client/server):
 
 `npm run <operation>`
 
-* "init" - install dependencies: client and server,
-* "init_client",
-* "init_server",
-* "client",
-* "server",
-* "start" - run: client and server
-* "ms_deps_install" - run docker-compose-deps (prisma, postgres, pgadmin, redis, redis-commander)
-* "redis_commander" start redis-commander on port :8099
+* "init_server" - install project dependencies
+* "server" - develop
+* "build" - docker image
 
 ### INSTALL DEPENDENCIES
 
-npm run ms_deps_install
+npm run system_deps_install

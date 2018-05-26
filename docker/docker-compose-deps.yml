@@ -4,30 +4,6 @@ networks:
     driver: bridge
 services:
 ################################
-  ms-prisma:
-    image: prismagraphql/prisma:1.8
-    container_name: ms-prisma
-    restart: always
-    labels:
-      org.label-schema.group: "ms-deps"
-    ports:
-    - "4466:4466"
-    environment:
-      PRISMA_CONFIG: |
-        port: 4466
-        # uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
-        # managementApiSecret: my-secret
-        databases:
-          default:
-            connector: postgres
-            host: ms-postgis
-            port: 5432
-            user: mspostgis
-            password: mspostgis
-            migrations: true
-    networks:
-      - deqlms
-################################
   ms-postgis:
     image: "mdillon/postgis"
     container_name: ms-postgis
@@ -35,7 +11,7 @@ services:
     environment:
       POSTGRES_USER: mspostgis
       POSTGRES_PASSWORD: mspostgis
-      POSTGRES_DB: prisma
+      POSTGRES_DB: postgis
     labels:
       org.label-schema.group: "ms-deps"
     ports:
@@ -45,7 +21,7 @@ services:
 ################################
   ms-pgadmin:
     image: "dpage/pgadmin4"
-    container_name: pgadmin
+    container_name: ms-pgadmin
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: "admin"
