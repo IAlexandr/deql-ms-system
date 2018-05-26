@@ -9,8 +9,8 @@
     "init_server": "cd server && yarn",
     "client": "cd client/deql-ms-client && yarn start",
     "server":
-      "set DEBUG=deql* && nodemon --ignore ./client --exec babel-node ./server/deql-ms-server",
-    "server_prod": "babel-node ./server/deql-ms-server",
+      "set DEBUG=deql* && nodemon --ignore ./client --exec babel-node ./server/utils/depends",
+    "server_prod": "babel-node ./server/utils/depends",
     "start": "concurrently \"yarn run server\" \"yarn run client\"",
     "build":
       "docker build -f ./dockerfile --cache-from geoworks/deql-ms -t geoworks/deql-ms .",
