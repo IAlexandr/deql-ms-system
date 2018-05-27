@@ -1,10 +1,5 @@
 export default {
-  port: '8888',
-  projectName: 'deql-ms',
-  graphql: {
-    engineApiKey: 'service:deql-ms-server:4bBKVv14mLq7dWyaQeqfjA',
-    useEngine: false,
-  },
+  projectName: 'deql-ms-system',
   redis: {
     host: '10.10.10.20',
     port: 32768,
@@ -13,12 +8,12 @@ export default {
     options: {
       dialect: 'postgres',
       host: '10.10.10.20',
-      port: 5433,
+      port: 5445,
       logging: false,
     },
-    username: 'postgres',
-    password: 'postgres',
-    dbName: 'template_postgis',
+    username: 'mspostgis',
+    password: 'mspostgis',
+    dbName: 'postgis',
     accessDbSeed: true,
     syncForce: true,
     accessSyncForce: true,

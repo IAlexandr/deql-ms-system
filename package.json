@@ -6,8 +6,8 @@
   "scripts": {
     "init_server": "cd server && yarn",
     "server":
-      "set DEBUG=deql* && nodemon --ignore ./client --exec babel-node ./server/utils/depends",
-    "server_prod": "babel-node ./server/utils/depends",
+      "set DEBUG=deql* && nodemon --ignore ./client --exec babel-node ./server/utils/dependencies",
+    "server_prod": "babel-node ./server/utils/dependencies",
     "start": "yarn run server",
     "build":
       "docker build -f ./dockerfile --cache-from geoworks/deql-ms-system -t geoworks/deql-ms-system .",
