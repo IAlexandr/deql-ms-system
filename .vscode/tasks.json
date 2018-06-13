@@ -27,6 +27,16 @@
       "type": "npm",
       "script": "redis_commander",
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "build_testing_container",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "run_testing_container",
+      "problemMatcher": []
     }
   ]
 }

@@ -1,0 +1,12 @@
+FROM node:10.1.0-alpine
+
+ARG DIR=/home/deql-ms-system
+#ADD package.json $DIR/
+WORKDIR $DIR
+
+#RUN npm install
+RUN npm install -g mocha
+
+COPY ./tests $DIR/tests
+
+CMD ["mocha", "tests/index.js", "--reporter", "spec"]

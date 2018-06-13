@@ -5,18 +5,17 @@
   "main": "index.js",
   "scripts": {
     "init_server": "cd server && yarn",
-    "server":
-      "set DEBUG=deql* && nodemon --ignore ./client --exec babel-node ./server/utils/dependencies",
+    "server": "set DEBUG=deql* && nodemon --ignore ./client --exec babel-node ./server/utils/dependencies",
     "server_prod": "babel-node ./server/utils/dependencies",
     "start": "yarn run server",
-    "build":
-      "docker build -f ./dockerfile --cache-from geoworks/deql-ms-system -t geoworks/deql-ms-system .",
-    "build_redis":
-      "docker build -f ./docker/dockerfile-redis --cache-from geoworks/redis -t geoworks/redis .",
-    "redis_commander":
-      "docker build -f ./docker/dockerfile-redis-commander --cache-from geoworks/redis-commander -t geoworks/redis-commander . && docker-compose -f ./docker/docker-compose-redis-commander.yml up -d --build",
-    "system_deps_install":
-      "yarn run build_redis && docker-compose -f ./docker/docker-compose-deps.yml up -d --build"
+    "build": "docker build -f ./dockerfile --cache-from geoworks/deql-ms-system -t geoworks/deql-ms-system .",
+    "build_redis": "docker build -f ./docker/dockerfile-redis --cache-from geoworks/redis -t geoworks/redis .",
+    "redis_commander": "docker build -f ./docker/dockerfile-redis-commander --cache-from geoworks/redis-commander -t geoworks/redis-commander . && docker-compose -f ./docker/docker-compose-redis-commander.yml up -d --build",
+    "system_deps_install": "yarn run build_redis && docker-compose -f ./docker/docker-compose-deps.yml up -d --build",
+    "build_testing_container": "docker build -f ./dockerfile.test --cache-from geoworks/deql-ms-system-test -t geoworks/deql-ms-system-test .",
+    "run_testing_container": "docker run --rm geoworks/deql-ms-system-test",
+    "build_container": "docker build -f ./dockerfile --cache-from geoworks/deql-ms-system -t geoworks/deql-ms-system .",
+    "restart_container": " docker-compose -f ./docker/docker-compose.yml down && docker-compose -f ./docker/docker-compose.yml up -d"
   },
   "repository": {
     "type": "git",
